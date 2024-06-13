@@ -1,0 +1,27 @@
+create table tbaluno(
+raaluno int AUTO_INCREMENT primary key ,
+nomealuno varchar(50)
+);
+
+create table tbprofessor(
+codprofessor int AUTO_INCREMENT primary key ,
+nomeprofessor varchar(50)
+);
+
+create table tbdisciplina(
+coddisciplina int AUTO_INCREMENT primary key ,
+disciplina varchar(50)
+);
+
+create table tbnota(
+codnota int AUTO_INCREMENT primary key ,
+raaluno int,
+codprofessor int,
+coddisciplina int,
+nota int,
+faltas int,
+FOREIGN KEY (raaluno) REFERENCES tbaluno(raaluno),
+FOREIGN KEY (codprofessor) REFERENCES tbprofessor(codprofessor),
+FOREIGN KEY (coddisciplina) REFERENCES tbdisciplina(coddisciplina)
+)
+

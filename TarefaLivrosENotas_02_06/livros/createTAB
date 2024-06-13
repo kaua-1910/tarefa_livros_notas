@@ -1,0 +1,26 @@
+create table tbgenero(
+codgenero int AUTO_INCREMENT primary key ,
+genero varchar(50)
+);
+
+create table tbautor(
+codautor int AUTO_INCREMENT primary key ,
+nomeautor varchar(50)
+);
+
+create table tbeditora(
+codeditora int AUTO_INCREMENT primary key ,
+nomeeditora varchar(50)
+);
+
+create table tblivro(
+codlivro int AUTO_INCREMENT primary key ,
+nomelivro varchar(50),
+edicao varchar(50),
+codgenero int,
+codautor int,
+codeditora int,
+FOREIGN KEY (codgenero) REFERENCES tbgenero(codgenero),
+FOREIGN KEY (codautor) REFERENCES tbautor(codautor),
+FOREIGN KEY (codeditora) REFERENCES tbeditora(codeditora)
+)
